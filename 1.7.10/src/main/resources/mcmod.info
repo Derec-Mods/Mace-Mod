@@ -1,0 +1,19 @@
+[
+{
+  "modid": "mace_backport",
+  "name": "Mace",
+  "description": "Adding the new Minecraft crushing weapon into previous versions!!!",
+  "version": "1.0.0.0",
+  "credits": "Derex",
+  "logoFile": "/logo.png",
+  "mcversion": "1.7.10",
+  "url": "https://www.curseforge.com/minecraft/mc-mods/mace-backport",
+  "updateUrl": "",
+  "authors": ["Derex"],
+  "parent": "",
+  "screenshots": [],
+  "dependencies": [
+     "mod_MinecraftForge"
+  ]
+}
+]
