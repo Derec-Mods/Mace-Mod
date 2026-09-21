@@ -10,35 +10,21 @@ base {
     archivesName = project.archives_base_name
 }
 
-// Ensure Java 17 is used for compilation
 java {
     toolchain.languageVersion = JavaLanguageVersion.of(17)
 }
 
-// Fabric Loom configuration
-loom {
-    // Configure access wideners for specific needs if any
-    // accessWidenerPath = file("src/main/resources/mace_backport.accesswidener")
-}
-
 repositories {
-    // Add repositories for any additional dependencies here
     mavenCentral()
 }
 
 dependencies {
-    // Minecraft and Fabric API
     minecraft "com.mojang:minecraft:1.19.2"
     mappings loom.officialMojangMappings()
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
-
-    // Add any other dependencies here
-    // For example:
-    // modImplementation "com.example:some-other-mod:1.0.0"
 }
 
-// Configure the jar to include fabric.mod.json and other resources
 processResources {
     inputs.property "version", project.version
     filteringCharset "UTF-8"
@@ -48,20 +34,27 @@ processResources {
     }
 }
 
-// Ensure UTF-8 encoding for Java compilation
 tasks.withType(JavaCompile).configureEach {
     options.encoding = "UTF-8"
     options.release.set(17)
 }
 
-// Configure javadoc and sources jars for publishing
+task sourcesJar(type: Jar) {
+    from sourceSets.main.allSource
+    archiveClassifier = "sources"
+}
+
+task javadocJar(type: Jar) {
+    from javadoc.destinationDir
+    archiveClassifier = "javadoc"
+}
+
 jar {
     from("LICENSE") {
         rename { "${it}_${base.archivesName}" }
     }
 }
 
-// configure the maven publication
 publishing {
     publications {
         mavenJava(MavenPublication) {
@@ -69,17 +62,15 @@ publishing {
             artifact(remapJar) {
                 classifier "dev"
             }
-            artifact(tasks.named("sourcesJar")) { // Correct way to reference the sourcesJar task
+            artifact(tasks.named("sourcesJar")) {
                 classifier "sources"
             }
-            artifact(tasks.named("javadocJar")) { // Correct way to reference the javadocJar task
+            artifact(tasks.named("javadocJar")) {
                 classifier "javadoc"
             }
         }
     }
 
-    // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
     repositories {
-        // Add repositories for publishing here
     }
 }
