@@ -1,0 +1,29 @@
+{
+  "mace_backport:mace_windu_advancement": {
+    "criteria": {
+      "mace_windu_advancement": "2026-09-21 01:27:10 -0500"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2026-09-21 01:25:41 -0500"
+    },
+    "done": true
+  },
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_something": "2026-09-21 01:28:21 -0500"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:river": "2026-09-21 01:29:38 -0500",
+      "minecraft:forest": "2026-09-21 01:25:43 -0500",
+      "minecraft:plains": "2026-09-21 01:27:30 -0500"
+    },
+    "done": false
+  },
+  "DataVersion": 3465
+}

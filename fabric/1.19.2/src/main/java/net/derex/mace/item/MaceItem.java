@@ -6,8 +6,8 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.entity.LivingEntity;
-import net.derex.mace.init.MaceBackportModTabs;
 import net.derex.mace.procedures.DoMaceFunctionsUpdatedProcedure;
 
 public class MaceItem extends SwordItem {
@@ -36,7 +36,7 @@ public class MaceItem extends SwordItem {
 			public Ingredient getRepairIngredient() {
 				return Ingredient.of(new ItemStack(Blocks.IRON_BLOCK));
 			}
-		}, 3, -2.4f, new Item.Properties().tab(MaceBackportModTabs.MACE_TAB));
+		}, 3, -2.4f, new Item.Properties().tab(CreativeModeTab.TAB_COMBAT));
 	}
 
 	@Override
