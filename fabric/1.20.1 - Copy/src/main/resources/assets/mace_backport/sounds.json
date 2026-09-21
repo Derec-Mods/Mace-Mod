@@ -1,0 +1,49 @@
+{
+  "mace_smash_ground": {
+    "subtitle": "subtitles.mace_smash_ground",
+    "sounds": [
+      {
+        "name": "mace_backport:mace_smash_ground2",
+        "stream": false
+      },
+      {
+        "name": "mace_backport:mace_smash_ground1",
+        "stream": false
+      },
+      {
+        "name": "mace_backport:mace_smash_ground3",
+        "stream": false
+      },
+      {
+        "name": "mace_backport:mace_smash_ground4",
+        "stream": false
+      }
+    ]
+  },
+  "mace_smash_air": {
+    "subtitle": "subtitles.mace_smash_air",
+    "sounds": [
+      {
+        "name": "mace_backport:mace_smash_air1",
+        "stream": false
+      },
+      {
+        "name": "mace_backport:mace_smash_air2",
+        "stream": false
+      },
+      {
+        "name": "mace_backport:mace_smash_air3",
+        "stream": false
+      }
+    ]
+  },
+  "mace_smash_ground_heavy": {
+    "subtitle": "subtitles.mace_smash_ground_heavy",
+    "sounds": [
+      {
+        "name": "mace_backport:mace_smash_ground_heavy",
+        "stream": false
+      }
+    ]
+  }
+}
