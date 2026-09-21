@@ -7,7 +7,6 @@ import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.LivingEntity;
-import net.derex.mace.init.MaceBackportModTabs;
 import net.derex.mace.procedures.DoMaceFunctionsUpdatedProcedure;
 
 public class MaceItem extends SwordItem {
@@ -36,13 +35,13 @@ public class MaceItem extends SwordItem {
 			public Ingredient getRepairIngredient() {
 				return Ingredient.of(new ItemStack(Blocks.IRON_BLOCK));
 			}
-		}, 3, -2.4f, new Item.Properties().tab(MaceBackportModTabs.MACE_TAB));
+		}, 3, -2.4f, new Item.Properties());
 	}
 
 	@Override
 	public boolean hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
 		boolean retval = super.hurtEnemy(itemstack, entity, sourceentity);
-		DoMaceFunctionsUpdatedProcedure.execute(entity.level, entity.getX(), entity.getY(), entity.getZ(), entity, sourceentity, itemstack);
+		DoMaceFunctionsUpdatedProcedure.execute(entity.level(), entity.getX(), entity.getY(), entity.getZ(), entity, sourceentity, itemstack);
 		return retval;
 	}
 }
