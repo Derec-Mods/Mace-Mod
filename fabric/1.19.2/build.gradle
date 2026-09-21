@@ -69,10 +69,10 @@ publishing {
             artifact(remapJar) {
                 classifier "dev"
             }
-            artifact(sourcesJar) {
+            artifact(tasks.named("sourcesJar")) { // Correct way to reference the sourcesJar task
                 classifier "sources"
             }
-            artifact(javadocJar) {
+            artifact(tasks.named("javadocJar")) { // Correct way to reference the javadocJar task
                 classifier "javadoc"
             }
         }
