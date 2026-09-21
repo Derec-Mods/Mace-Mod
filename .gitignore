@@ -1,0 +1,20 @@
+# Gradle cache and temporary internal files
+.gradle/
+*.gradletasknamecache
+
+# All build outputs (compiled classes, jars, etc.)
+build/
+**/build/
+
+# Ignore Gradle GUI config
+gradle-app.setting
+
+# Local environment configuration (usually contains local SDK paths)
+local.properties
+
+# --- DO NOT IGNORE THE WRAPPER (CRITICAL) ---
+# Ensure these are NOT ignored so other developers can run your build without installing Gradle
+!gradlew
+!gradlew.bat
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties

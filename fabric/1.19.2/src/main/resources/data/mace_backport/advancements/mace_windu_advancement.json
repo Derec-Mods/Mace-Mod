@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "mace_backport:mace"
+    },
+    "title": {
+      "translate": "advancements.mace_windu_advancement.title"
+    },
+    "description": {
+      "translate": "advancements.mace_windu_advancement.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "mace_windu_advancement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mace_backport:mace"
+            ],
+            "count": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 1
+  },
+  "parent": "minecraft:adventure/kill_a_mob"
+}

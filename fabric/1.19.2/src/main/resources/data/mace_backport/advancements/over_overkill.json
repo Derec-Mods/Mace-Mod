@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "mace_backport:mace"
+    },
+    "title": {
+      "translate": "advancements.over_overkill.title"
+    },
+    "description": {
+      "translate": "advancements.over_overkill.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "over_overkill": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 100
+  },
+  "parent": "mace_backport:mace_windu_advancement"
+}
