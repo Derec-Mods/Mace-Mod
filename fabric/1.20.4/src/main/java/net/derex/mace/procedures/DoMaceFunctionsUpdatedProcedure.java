@@ -13,7 +13,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.advancements.AdvancementProgress;
-import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.AdvancementHolder;
 
 import net.derex.mace.init.MaceBackportModGameRules;
 import net.derex.mace.init.MaceBackportModEnchantments;
@@ -91,10 +91,9 @@ public class DoMaceFunctionsUpdatedProcedure {
 				MaceBackportMod.LOGGER.info("[Debug] Fall Height from Attack: " + fallHeight);
 				MaceBackportMod.LOGGER.info("[Debug] Mace damage from Attack: " + fallDmg);
 			}
-			if (!(sourceentity instanceof ServerPlayer _plr19 && _plr19.level() instanceof ServerLevel
-					&& _plr19.getAdvancements().getOrStartProgress(_plr19.getServer().getAdvancements().getAdvancement(new ResourceLocation("mace_backport:over_overkill"))).isDone()) && fallDmg >= 100) {
-				if (sourceentity instanceof ServerPlayer _player) {
-					Advancement _adv = _player.getServer().getAdvancements().getAdvancement(new ResourceLocation("mace_backport:over_overkill"));
+			if (sourceentity instanceof ServerPlayer _player && _player.level() instanceof ServerLevel && fallDmg >= 100) {
+				AdvancementHolder _adv = _player.getServer().getAdvancements().get(new ResourceLocation("mace_backport:over_overkill"));
+				if (_adv != null) {
 					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
 					if (!_ap.isDone()) {
 						for (String criteria : _ap.getRemainingCriteria())
