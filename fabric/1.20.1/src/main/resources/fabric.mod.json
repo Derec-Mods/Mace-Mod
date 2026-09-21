@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "mace_backport",
+  "version": "${version}",
+  "name": "Mace Backport",
+  "description": "A backport of the Mace from newer Minecraft versions.",
+  "authors": [
+    "Derex"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/Derex/Mace-Mod"
+  },
+  "license": "MIT",
+  "icon": "assets/mace_backport/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.derex.mace.MaceBackportMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.14.0",
+    "minecraft": "~1.19.2",
+    "java": ">=17",
+    "fabric-api": "*"
+  }
+}
